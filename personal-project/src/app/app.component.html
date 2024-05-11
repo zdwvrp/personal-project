@@ -1,0 +1,33 @@
+<div id="master-container">
+    <mat-toolbar id="toolbar">
+        <h4>Title</h4>
+        <div class="toolbar-icon-container">
+            <ng-container *ngFor="let tab of fileCabinetTabs">
+                <div class="file-cabinet-tab-inactive">
+                    <a *ngIf="tab.type == 'link'" mat-icon-button [routerLink]="tab.link">
+                        <mat-icon>{{tab.iconText}}</mat-icon>
+                    </a>
+                    <button *ngIf="tab.type == 'menu'" mat-icon-button>
+                        <mat-icon>{{tab.iconText}}</mat-icon>
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+    </mat-toolbar>
+    
+    <mat-drawer-container id="drawer">
+        <mat-drawer #sidenav [mode]="'side'">
+            <div class="sidenav-drawer-content">
+                
+            </div>
+        </mat-drawer>
+    
+        <mat-drawer-content class="sidenav-content">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <router-outlet></router-outlet>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
+

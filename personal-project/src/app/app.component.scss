@@ -1,0 +1,36 @@
+#master-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#toolbar { 
+    display: flex;
+    height: 7vh;
+}
+#drawer {
+    display: flex;
+    min-height: 93vh;
+}
+
+.toolbar-icon-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.sidenav-drawer-content {
+    min-width: 10vw;
+    background-color: aqua;
+}
+.sidenav-content {
+    width: 50vw;
+}
+
+.file-cabinet-tab-inactive {
+    display: flex;
+    background-color: red;
+}
+.file-cabinet-tab-active {
+    display: flex;
+    background-color: pink;
+}
