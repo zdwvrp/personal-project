@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Material Imports
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,7 +25,6 @@ import { WordleComponent } from './wordle/wordle.component';
     AppRoutingModule,
     RouterModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule,
