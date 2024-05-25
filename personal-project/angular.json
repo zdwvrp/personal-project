@@ -119,7 +119,6 @@
       }
     }
   },
-  "defaultProject": "personal-project",
   "cli": {
     "analytics": false
   }
