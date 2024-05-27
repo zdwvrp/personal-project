@@ -9,6 +9,7 @@ import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@an
 
 // Material Imports //
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 // Component Imports //
 import { HomeComponent } from './home/home.component';
 import { WordleComponent } from './wordle/wordle.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,10 +29,12 @@ import { WordleComponent } from './wordle/wordle.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
     MatSidenavModule,
     MatToolbarModule,
   ],

@@ -12,6 +12,7 @@ export class AppComponent {
     {
       iconText: 'home',
       type: 'link',
+      title: 'Home',
       link: '/',
       color: 'white',
       active: false,
@@ -22,6 +23,7 @@ export class AppComponent {
     {
       iconText: 'check_box_outline_blank',
       type: 'link',
+      title: 'Wordle',
       link: '/wordle',
       color: 'pink',
       active: false,
@@ -32,6 +34,7 @@ export class AppComponent {
     {
       iconText: 'more_vert',
       type: 'menu',
+      title: '',
       menuName: 'more_options',
       color: 'white',
       active: false,
@@ -40,6 +43,7 @@ export class AppComponent {
       },
     },
   ];
+  activeTab: any = null;
 
   constructor(
     private _route: ActivatedRoute,
@@ -52,6 +56,10 @@ export class AppComponent {
             tab.active = event.url === tab.link;
           } else {
             tab.active = event.url.includes(tab.link);
+          }
+
+          if (tab.active) {
+            this.activeTab = tab;
           }
         });
       }
