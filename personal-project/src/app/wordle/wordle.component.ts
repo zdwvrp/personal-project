@@ -1,5 +1,10 @@
 import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+
+import { WinDialogComponent } from './dialogs/win-dialog/win-dialog.component';
+import { LoseDialogComponent } from './dialogs/lose-dialog/lose-dialog.component';
 
 interface GuessedLetter {
   letter: string;
@@ -20,8 +25,8 @@ interface DisplayedLetter {
 })
 export class WordleComponent implements OnInit, AfterViewChecked {
 
-  private readonly wordLength: number = 5;
-  private readonly guessesAllowed: number = 6;
+  readonly wordLength: number = 5;
+  readonly guessesAllowed: number = 6;
 
   letters: Array<Array<string>> = [
     ['q','w','e','r','t','y','u','i','o','p'],
@@ -65,7 +70,10 @@ export class WordleComponent implements OnInit, AfterViewChecked {
   @ViewChild('wordleInput') _wordleInput: ElementRef;
   @ViewChild('wordleForm') _wordleForm: NgForm;
 
-  constructor() { }
+  constructor(
+    private _snackbar: MatSnackBar,
+    private _dialog: MatDialog,
+  ) { }
 
   ngOnInit(): void {
     // init wordle word
@@ -171,7 +179,9 @@ export class WordleComponent implements OnInit, AfterViewChecked {
     console.log('trySubmitGuess guess: ' + guess );
     console.log('guess match: ', guess.match(/[^a-zA-Z]/))
     if (guess.match(/[a-zA-Z]/g) && guess.length === 5) {
-      this.submitGuess(guess);
+      if (this.guessesUsed < this.guessesAllowed) {
+        this.submitGuess(guess);
+      }
     } else {
       this.handleInvalidGuess(guess);
     }
@@ -216,8 +226,10 @@ export class WordleComponent implements OnInit, AfterViewChecked {
 
     if (numCorrect === this.wordLength) {
       // winner winner chicken dinner
+      this._dialog.open(WinDialogComponent, { data: {guessesUsed: this.guessesUsed, correctWord: this.wordleWord}});
     } else if (this.guessesUsed === this.guessesAllowed) {
       // game over :(
+      this._dialog.open(LoseDialogComponent, { data: {guessesUsed: this.guessesUsed, correctWord: this.wordleWord}});
     } else {
       this.resetForm();
     }

@@ -24,7 +24,7 @@
 
     <form #wordleForm="ngForm" novalidate (ngSubmit)="trySubmitGuess()">
         <mat-form-field style="height: 0px !important;">
-            <input matInput #wordleInput name="wordleInput" [maxLength]="5" (keyup)="handleWordleKeyUp($event, wordleInput.value)" autofocus/>
+            <input matInput #wordleInput name="wordleInput" [disabled]="guessesUsed >= guessesAllowed" [maxLength]="5" (keyup)="handleWordleKeyUp($event, wordleInput.value)" autofocus/>
         </mat-form-field>
     </form>
 
