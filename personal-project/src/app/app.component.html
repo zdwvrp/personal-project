@@ -1,9 +1,14 @@
 <div id="master-container">
     <mat-toolbar id="toolbar">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
         <h4>Title</h4>
+        
         <div class="toolbar-icon-container">
             <ng-container *ngFor="let tab of fileCabinetTabs">
-                <div class="file-cabinet-tab-inactive">
+                <div class="file-cabinet-tab" [style.background-color]="tab.active ? tab.activeStyles['background-color'] : ''" [ngClass]="tab.active ? 'file-cabinet-tab-active' : 'file-cabinet-tab-inactive'">
                     <a *ngIf="tab.type == 'link'" mat-icon-button [routerLink]="tab.link">
                         <mat-icon>{{tab.iconText}}</mat-icon>
                     </a>
@@ -23,9 +28,6 @@
         </mat-drawer>
     
         <mat-drawer-content class="sidenav-content">
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
             <router-outlet></router-outlet>
         </mat-drawer-content>
     </mat-drawer-container>

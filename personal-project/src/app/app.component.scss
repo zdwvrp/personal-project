@@ -16,6 +16,9 @@
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
+    align-items: flex-end;
+
+    height: 100%;
 }
 
 .sidenav-drawer-content {
@@ -26,11 +29,19 @@
     width: 50vw;
 }
 
-.file-cabinet-tab-inactive {
+.file-cabinet-tab {
     display: flex;
-    background-color: red;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.file-cabinet-tab-inactive:hover {
+    background-color: rgba(250, 235, 215, 0.05);
+}
+
+.file-cabinet-tab-inactive {
+    background-color: rgba(250, 235, 215, 0.025);
 }
 .file-cabinet-tab-active {
-    display: flex;
-    background-color: pink;
+    
 }
