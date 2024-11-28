@@ -28,7 +28,9 @@
         </mat-drawer>
     
         <mat-drawer-content class="sidenav-content">
-            <router-outlet></router-outlet>
+            <div style="max-height: 100%; max-width:100%; overflow: auto;">
+                <router-outlet></router-outlet>
+            </div>
         </mat-drawer-content>
     </mat-drawer-container>
 </div>

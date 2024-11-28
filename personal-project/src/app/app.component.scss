@@ -1,15 +1,21 @@
 #master-container {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 #toolbar { 
     display: flex;
-    height: 7vh;
+    height: 56px;
+    position: absolute;
+    top: 0px;
+    z-index: 1000;
 }
 #drawer {
     display: flex;
-    min-height: 93vh;
+    max-height: 100vh;
+    min-height: calc(100vh - 132px);
+    position: absolute;
+    top: 56px;
 }
 
 .toolbar-icon-container {
@@ -25,9 +31,6 @@
     min-width: 10vw;
     background-color: aqua;
 }
-// .sidenav-content {
-//     width: 50vw;
-// }
 
 .file-cabinet-tab {
     display: flex;
