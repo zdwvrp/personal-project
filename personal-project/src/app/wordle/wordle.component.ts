@@ -19,9 +19,10 @@ interface DisplayedLetter {
 }
 
 @Component({
-  selector: 'app-wordle',
-  templateUrl: './wordle.component.html',
-  styleUrls: ['./wordle.component.scss']
+    selector: 'app-wordle',
+    templateUrl: './wordle.component.html',
+    styleUrls: ['./wordle.component.scss'],
+    standalone: false
 })
 export class WordleComponent implements OnInit, AfterViewChecked {
 

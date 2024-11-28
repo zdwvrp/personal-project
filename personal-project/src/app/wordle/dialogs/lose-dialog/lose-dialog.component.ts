@@ -7,11 +7,10 @@ interface DialogData {
 }
 
 @Component({
-  selector: 'app-lose-dialog',
-  standalone: true,
-  imports: [MatDialogModule],
-  templateUrl: './lose-dialog.component.html',
-  styleUrl: './lose-dialog.component.scss'
+    selector: 'app-lose-dialog',
+    imports: [MatDialogModule],
+    templateUrl: './lose-dialog.component.html',
+    styleUrl: './lose-dialog.component.scss'
 })
 export class LoseDialogComponent {
 

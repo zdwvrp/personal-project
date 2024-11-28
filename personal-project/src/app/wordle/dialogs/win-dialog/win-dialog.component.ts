@@ -7,11 +7,10 @@ interface DialogData {
 }
 
 @Component({
-  selector: 'app-win-dialog',
-  standalone: true,
-  imports: [MatDialogModule],
-  templateUrl: './win-dialog.component.html',
-  styleUrl: './win-dialog.component.scss'
+    selector: 'app-win-dialog',
+    imports: [MatDialogModule],
+    templateUrl: './win-dialog.component.html',
+    styleUrl: './win-dialog.component.scss'
 })
 export class WinDialogComponent {
 
