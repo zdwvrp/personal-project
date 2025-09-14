@@ -21,14 +21,14 @@
     </mat-toolbar>
     
     <mat-drawer-container id="drawer">
-        <mat-drawer #sidenav [mode]="'side'">
+        <mat-drawer #sidenav [mode]="'over'">
             <div class="sidenav-drawer-content">
                 
             </div>
         </mat-drawer>
     
         <mat-drawer-content class="sidenav-content">
-            <div style="max-height: 100%; max-width:100%; overflow: auto;">
+            <div class="sidenav-content-container">
                 <router-outlet></router-outlet>
             </div>
         </mat-drawer-content>

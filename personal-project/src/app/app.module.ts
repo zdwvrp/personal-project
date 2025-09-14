@@ -9,6 +9,7 @@ import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@an
 import { FormsModule } from '@angular/forms';
 
 // Material Imports //
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -34,6 +35,7 @@ import { WordleComponent } from './wordle/wordle.component';
     RouterModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatCardModule,
     MatIconModule,
     MatInputModule,
     MatSidenavModule,

@@ -2,3 +2,18 @@
 
 html, body { height: 100%; overflow: hidden; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Class to be used on the root div in each page. */
+.main-page-container {
+    margin: 32px 20vw 0px;
+    width: calc(100% - 40vw);
+    max-width: 100%;
+}
+
+.nav-card {
+    width: 256px;
+    min-height: 256px;
+}
+.nav-card:hover {
+    background-color: pink;
+}
