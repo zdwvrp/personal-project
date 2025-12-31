@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 // Component Imports //
 import { HomeComponent } from './home/home.component';
 import { WordleComponent } from './wordle/wordle.component';
+import { MtgLifeCounterComponent } from './mtg-life-counter/mtg-life-counter.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { WordleComponent } from './wordle/wordle.component';
     AppComponent,
     HomeComponent,
     WordleComponent,
+    MtgLifeCounterComponent,
   ],
   imports: [
     BrowserModule,

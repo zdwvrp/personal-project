@@ -1,0 +1,62 @@
+<div class="life-counter--master-container">
+    <div class="life-counter--layout-{{players}}-player">
+        
+        <!-- Individual Player Life Counters -->
+        <div *ngFor="let player of playerArray; index as i" class="life-counter--player life-counter--player-{{i}}">
+            
+            <!-- Decrease Life Button-->
+            <div *ngIf="lifeChangeState.enabled" class="life-counter--item damage-container">
+                <button mat-icon-button class="life-counter--life-button" (click)="damagePlayer(player)">
+                    <mat-icon fontSet="material-symbols-outlined">heart_minus</mat-icon>
+                </button>
+            </div>
+            
+            <!-- Life Total -->
+            <div class="life-counter--item life-container">
+                <p class="life-text">{{player.life}}</p>
+            </div>
+
+            <!-- Increase Life Button -->
+            <div *ngIf="lifeChangeState.enabled" class="life-counter--item heal-container">
+                <button mat-icon-button class="life-counter--life-button" (click)="healPlayer(player)">
+                    <mat-icon fontSet="material-symbols-outlined">heart_plus</mat-icon>
+                </button>
+            </div>
+        </div> <!-- END | Individual Player Life Counters -->
+
+    </div> <!-- END | Player-Specific Life Counter Layout -->
+</div> <!-- END | Life Counter Master Container -->
+
+<div class="floating-expansion-button">
+    <button mat-fab color="primary" (click)="actionButtonClicked()">
+        <mat-icon fontSet="material-symbols-outlined">{{actionButtonState}}</mat-icon>
+    </button>
+</div>
+
+<div class="floating-action-menu" [class.hide]="actionMenuHidden">
+
+    <div class="floating-action-menu__section">
+        <button mat-fab extended color="primary">
+            <mat-icon fontSet="material-symbols-outlined">arrow_circle_left</mat-icon>
+            Pass Turn
+        </button>
+
+        <button mat-fab extended color="primary" [disabled]="lifeChangeState.initiator == 'heal'" (click)="toggleLifeChange('damage')">
+            <mat-icon fontSet="material-symbols-outlined">swords</mat-icon>
+            Damage
+        </button>
+    </div>
+
+    <div class="floating-action-menu__section">
+        <button mat-fab extended color="primary" [disabled]="lifeChangeState.initiator == 'damage'" (click)="toggleLifeChange('heal')">
+            <mat-icon fontSet="material-symbols-outlined">health_cross</mat-icon>
+            Heal
+        </button>
+
+        <button mat-fab extended color="primary">
+            <mat-icon fontSet="material-symbols-outlined">discover_tune</mat-icon>
+            Game
+        </button>
+    </div>
+
+</div>

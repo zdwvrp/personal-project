@@ -1,0 +1,110 @@
+.life-counter--master-container {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+//////////////////////////////
+/* LIFE COUNTER MENU BUTTON */
+//////////////////////////////
+
+.floating-expansion-button {
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 56px);
+    left: calc(50% - 56px);
+}
+.floating-expansion-button button.mdc-fab {
+    height: 112px !important;
+    width: 112px !important;
+}
+
+.floating-action-menu {
+    position: absolute;
+    top: calc(50% - 56px);
+    z-index: 1;
+    width: 100%;
+    height: 112px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 4vw;
+}
+.floating-action-menu__section {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+/////////////////////////////
+/* LIFE COUNTER CONTAINERS */
+/////////////////////////////
+
+.life-counter--layout-4-player {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.life-counter--layout-4-player .life-counter--player {
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+}
+
+.life-counter--player {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.life-counter--player-0 {
+    border-color: red;
+    background-color: red;
+}
+.life-counter--player-1 {
+    border-color: blue;
+    background-color: blue;
+}
+.life-counter--player-2 {
+    border-color: yellow;
+    background-color: yellow;
+}
+.life-counter--player-3 {
+    border-color: green;
+    background-color: green;
+}
+
+
+////////////////////////////
+/* LIFE COUNTER INTERNALS */
+////////////////////////////
+
+.life-container {
+    font-size: 12em;
+    text-shadow: 2px 2px 4px black,
+                 -2px -2px 4px black,
+                 -2px 2px 4px black,
+                 2px -2px 4px black;
+}
+.life-counter--item {
+    
+}
+.life-counter--life-button {
+    width: 70px;
+    height: 70px;
+}
+.life-counter--life-button img {
+    height: 48px;
+    width: 48px;
+}
+
+// Figure out how to dynamically contrast color based on background

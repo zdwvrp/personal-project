@@ -45,6 +45,7 @@ export class AppComponent {
     },
   ];
   activeTab: any = null;
+  hideToolbar: boolean = false;
 
   constructor(
     private _route: ActivatedRoute,
@@ -62,6 +63,10 @@ export class AppComponent {
           if (tab.active) {
             this.activeTab = tab;
           }
+
+
+          // Hide toolbar when using mtg life counter
+          this.hideToolbar = event.url.includes('magic-life-counter');
         });
       }
     });

@@ -1,5 +1,5 @@
 <div id="master-container">
-    <mat-toolbar id="toolbar">
+    <mat-toolbar id="toolbar" [class.hide]="hideToolbar">
         <button mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
@@ -20,7 +20,7 @@
         </div>
     </mat-toolbar>
     
-    <mat-drawer-container id="drawer">
+    <mat-drawer-container id="drawer" [class.maximized]="hideToolbar">
         <mat-drawer #sidenav [mode]="'over'">
             <div class="sidenav-drawer-content">
                 
