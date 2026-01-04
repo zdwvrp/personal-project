@@ -1,8 +1,8 @@
 <div class="life-counter--master-container">
-    <div class="life-counter--layout-{{players}}-player">
+    <div class="life-counter--layout-{{game.numberOfPlayers}}-player">
         
         <!-- Individual Player Life Counters -->
-        <div *ngFor="let player of playerArray; index as i" class="life-counter--player life-counter--player-{{i}}">
+        <div *ngFor="let player of game.players; index as i" class="life-counter--player life-counter--player-{{i}}">
             
             <!-- Decrease Life Button-->
             <div *ngIf="lifeChangeState.enabled" class="life-counter--item damage-container">
@@ -12,8 +12,9 @@
             </div>
             
             <!-- Life Total -->
-            <div class="life-counter--item life-container">
-                <p class="life-text">{{player.life}}</p>
+            <div class="life-container life-counter--item">
+                <span class="life-text">{{lifeChangeState.enabled ? lifeChangeState.editableGameState.players[player.id].life : player.life}}</span>
+                <span *ngIf="lifeChangeState.enabled" class="life-text--difference">{{getLifeChangeDifference(player.id)}}</span>
             </div>
 
             <!-- Increase Life Button -->
